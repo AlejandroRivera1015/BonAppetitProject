@@ -1,0 +1,83 @@
+.itemContainer {
+    transition: background 1s, color ease-in-out, border-radius 1.4s;
+    display: block;
+    border: solid 1px transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 6px 6px 6px 6px;
+    transform: translate(0px, 0px);
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.isVisibleItem{
+    opacity:1 ;
+}
+
+.active {
+    transition: background ease-out 1s, border-radius 1.4s;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+.category {
+    border: solid 1px;
+    border-radius: 10px;
+    padding: 4px 4px;
+    font-weight: bold;
+}
+
+
+.counterWrapper{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.counterBtn {
+    background: white;
+    width: 20px;
+    color: black;
+    border: solid 1px ;
+    border-radius: 4px;
+    box-shadow:  0 0 15 rgba(255, 255, 255, 0.1);
+}
+
+
+
+.Meat {
+    color: #cc0b45;
+}
+
+.Dessert {
+    color: #ca2ca8;
+}
+
+.dropItemImg {
+    max-width: 40px;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.orderImg{position: absolute; right: 10px; bottom: 10px; max-width: 100px;}
+
+
+
+
+
+@media(min-width:980px) {
+
+    .itemImage {
+        max-width: 168px;
+        width: 100%;
+        height: 128px;
+        border-radius: 6px;
+    }
+
+
+}

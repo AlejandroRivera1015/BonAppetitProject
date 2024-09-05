@@ -1,0 +1,20 @@
+.itemsContainer{max-width: 880px; width: 100%; flex-wrap: wrap; display: flex; justify-content: space-between; margin: 0 auto; }
+
+
+.ordersContainer{max-width: 800PX; width: 100%; border : solid 1px black; margin: 0 auto;}
+
+.orderWrapper{width: 100%; border: solid 1px red;}
+.orderHeaderSection{display: flex; align-items: center; justify-content: space-between;}
+.orderHeaderSection img{max-width: 50px;}
+
+
+.waiting{background: none;}
+.waitingActive{background: none; background: rgb(214, 214, 0);}
+
+
+@media(min-width:980px){
+    .itemsContainer{gap: 40px;}
+    .itemContainer{max-width:200px; width: 100%; padding: 20px 10px; }
+
+
+}

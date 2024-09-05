@@ -1,0 +1,119 @@
+.homeContainer {
+    position: relative;
+}
+
+
+
+.homeContainer .content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.homeLogInSection {
+    background-color: transparent;
+}
+
+
+
+
+
+.logInForm,
+.logInForm input {
+    text-align: center;
+    gap: 20px;
+    display: grid;
+    justify-items: center;
+}
+
+.homeLogInSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formWrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+form button {
+    background: transparent;
+    border: solid 1px white;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+}
+
+
+@media(max-width:980px) {
+    .homeContainer {
+        display: block;
+    }
+
+    .leftSection,
+    .rightSection {
+        width: 100%;
+    }
+
+    .homeContainer video {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+    }
+
+
+}
+
+
+@media(min-width:980px) {
+
+    .homeContainer video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+    }
+
+    .leftSection,
+    .rightSection {
+        width: 50%;
+        height: 100vh;
+    }
+
+    .homeContainer {
+        display: flex;
+    }
+
+    form {
+        padding: 30px 30px;
+    }
+
+    .formWrapper {
+        max-width: 400px;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .userInput {
+        height: 30px;
+        border: solid 1px white;
+        background: transparent;
+        border-radius: 4px;
+        color: white;
+        font-size: 20px;
+    }
+
+
+
+
+}

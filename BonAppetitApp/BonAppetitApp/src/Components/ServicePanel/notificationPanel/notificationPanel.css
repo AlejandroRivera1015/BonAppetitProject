@@ -1,0 +1,42 @@
+.notificationPanel{
+    display: flex;
+    z-index: 1;
+    background-color: rgba(255, 255, 2555, 0.3);
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px); 
+    height: 100vh;
+    width: 100%;
+
+}
+.CancelWindow{
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    max-width: 50px;
+    right: 10px;
+    top: 10px;
+    
+}
+
+.ConfirmationGIF{display: flex; position: absolute; align-items: center; z-index: 3; left: 50%; top:60%; transform: translate(-50%, -50%);
+}
+
+
+@media(min-width:980px){
+    .notificationPanel{font-size: 50px;}
+}
+
+
+
+
+
+
+
+
+

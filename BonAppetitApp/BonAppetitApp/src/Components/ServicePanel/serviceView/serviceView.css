@@ -1,0 +1,83 @@
+ul li {
+  list-style: none;
+}
+
+.itemsContainer {
+  max-width: 880px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.requestStatus {
+  display: flex;
+  justify-content: center;
+  background: white !important;
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: background ease-in 1s;
+}
+
+.pendingStyle {
+  background: rgb(240, 116, 0) !important;
+  color: white;
+}
+
+.ordersContainer {
+  border-radius: 10px 10px 0 0;
+}
+
+.order::after {
+  display: flex;
+  content: "";
+
+  background: rgba(0, 0, 0, 0.404);
+  height: 1px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.billDisplay {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding-top: 30px;;
+  background-color: black;
+  padding: 20px 50px;
+  color: white;
+  border-radius: 0px 0px 10px;
+
+
+}
+
+@media (min-width: 980px) {
+  .ordersContainer {
+    padding: 50px;
+  }
+  .itemsContainer {
+    gap: 40px;
+  }
+  .itemContainer {
+    max-width: 200px;
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .orderItem {
+    display: flex;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .orderItem div {
+    width: 25%;
+  }
+  .order {
+    margin-bottom: 10px;
+  }
+  .requestStatus {
+    width: 50%;
+  }
+}

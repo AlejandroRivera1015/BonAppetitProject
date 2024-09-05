@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  background: black;
+  color: white;
+  max-width: 100%;
+  padding: 20px 50px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+.footerBAR {
+  display: flex;
+  content: "";
+  height: 150px;
+  width: 1px;
+  background-color: white;
+}
+
+.locationImg {
+  max-width: 200px;
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  .footer {
+    display: flex;
+  }
+
+  .footerLocation{display: flex;}
+}
