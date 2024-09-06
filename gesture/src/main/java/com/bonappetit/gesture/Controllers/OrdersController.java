@@ -1,16 +1,13 @@
 package com.bonappetit.gesture.Controllers;
 
 
+import com.bonappetit.gesture.DTO.ServiceOrderDTO.KitchenServiceDTO;
 import com.bonappetit.gesture.DTO.ServiceOrderDTO.ServiceOrderDTO;
-import com.bonappetit.gesture.Models.Order.OrderItem;
 import com.bonappetit.gesture.Models.Order.ServiceOrder;
 import com.bonappetit.gesture.Services.ordersServices.OrdersServices;
-import org.aspectj.apache.bcel.generic.RET;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -38,6 +35,13 @@ public class OrdersController {
     @ResponseBody
     public Double getBill (@PathVariable Integer tableId){
         return ordersServices.getTableBill(tableId);
+    }
+
+    @GetMapping("kitchen/getOrders/{tableId}")
+    @ResponseBody
+    public List<KitchenServiceDTO> KitchenOrders(@PathVariable Integer tableId){
+        return ordersServices.getKitchenOrders(tableId);
+
     }
 
 }

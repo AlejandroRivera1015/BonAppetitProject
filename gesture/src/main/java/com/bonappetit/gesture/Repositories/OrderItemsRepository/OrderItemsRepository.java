@@ -15,7 +15,7 @@ public interface OrderItemsRepository extends JpaRepository<OrderItem,Integer> {
         @Query("SELECT i.itemId, i.itemPrice, i.amount, i.requestStatus FROM OrderItem i JOIN i.serviceOrder s WHERE s.tableId = :tableId")
         List<Object[]> getItemsPrices(Integer tableId);
 
-        @Query("SELECT s.id, i.itemId, i.amount, i.requestStatus FROM OrderItem i JOIN i.serviceOrder s WHERE s.tableId = :tableId")
+        @Query("SELECT s.id, i FROM OrderItem i JOIN FETCH i.serviceOrder s WHERE s.tableId = :tableId")
         List<Object[]> getTableRequests(Integer tableId);
 
 }

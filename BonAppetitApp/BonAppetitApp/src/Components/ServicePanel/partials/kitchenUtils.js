@@ -6,7 +6,7 @@ export const getServiceOrders = async(tableId) =>{
 
 
     try{
-        let petition = await fetch(`${tableId}`,{
+        let petition = await fetch(`http://localhost:8080/orders/kitchen/getOrders/${tableId}`,{
             method : "GET",
             headers :{"Content-Type" : "application/json"},
         })

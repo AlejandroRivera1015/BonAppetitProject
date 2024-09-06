@@ -1,5 +1,6 @@
 package com.bonappetit.gesture.Services.ordersServices;
 
+import com.bonappetit.gesture.DTO.ServiceOrderDTO.KitchenServiceDTO;
 import com.bonappetit.gesture.DTO.ServiceOrderDTO.ServiceOrderDTO;
 import com.bonappetit.gesture.Models.Order.OrderItem;
 import com.bonappetit.gesture.Models.Order.ServiceOrder;
@@ -14,5 +15,5 @@ public interface OrdersServices {
     public void saveTableOrder(ServiceOrder order);
     public List<ServiceOrderDTO> getTableOrders(Integer tableId);
     public double getTableBill(Integer tableId);
-    public List<Object[]> getTableRequests(Integer tableId);
+    public List<KitchenServiceDTO> getKitchenOrders(Integer tableId);
 }

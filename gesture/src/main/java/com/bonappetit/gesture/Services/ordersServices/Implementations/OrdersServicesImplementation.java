@@ -93,23 +93,49 @@ public class OrdersServicesImplementation implements OrdersServices {
         return bill;
     }
 
-    public List<Object[]> getTableRequests(Integer tableId){
 
-        List<Object[]>  requests = orderItemsRepository.getTableRequests(tableId);
-        HashMap<Integer,List<KitchenServiceDTO>> kitchenOrdersMap = new HashMap<>();
-        List<Object[]> tempOrder = new ArrayList<>();
+    public List<KitchenServiceDTO> getKitchenOrders(Integer tableId){
+
+        List<Object[]> kitchenOrders = orderItemsRepository.getTableRequests(tableId);
+        HashMap<Integer,List<OrderItem>> kitchenOrdersMap = new HashMap<>();
+        List<KitchenServiceDTO> kitchenOrdersList = new ArrayList<>();
+        List<OrderItem> tempOrder = new ArrayList<>();
+        Integer tempId = 0;
 
 
-        for (Object[] request : requests){
 
-            Integer orderId = (Integer) request[0];
-            Integer amount = (Integer) request[1];
-            String requestStatus = (String) request[2];
-            
+        for (Object[] order : kitchenOrders){
+            Integer sId = (Integer)order[0];
+            OrderItem item = (OrderItem)order[1];
+
+            if(tempOrder.isEmpty() || tempId.equals(sId)){
+                tempOrder.add(item);
+
+            }
+            else {
+                tempOrder.clear();
+                tempOrder.add(item);
+            }
+
+            kitchenOrdersMap.put(sId,new ArrayList<>(tempOrder));
+            tempId = sId;
+
+
         }
-        return orderItemsRepository.getTableRequests(tableId);
+
+        for (Map.Entry<Integer,List<OrderItem>> order: kitchenOrdersMap.entrySet()){
+            kitchenOrdersList.add(new KitchenServiceDTO(order.getKey(),order.getValue()));
+
+        }
+
+        return kitchenOrdersList;
+
+
 
     }
+
+
+
 
 
 
