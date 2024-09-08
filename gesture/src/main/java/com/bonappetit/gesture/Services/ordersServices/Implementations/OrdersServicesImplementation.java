@@ -1,7 +1,8 @@
 package com.bonappetit.gesture.Services.ordersServices.Implementations;
 
 
-import com.bonappetit.gesture.DTO.ServiceOrderDTO.KitchenServiceDTO;
+import com.bonappetit.gesture.DTO.Kitchen.KitchenOrderDTO;
+import com.bonappetit.gesture.DTO.Kitchen.KitchenServiceDTO;
 import com.bonappetit.gesture.DTO.ServiceOrderDTO.ServiceOrderDTO;
 import com.bonappetit.gesture.Models.Order.OrderItem;
 import com.bonappetit.gesture.Models.Order.ServiceOrder;
@@ -9,6 +10,7 @@ import com.bonappetit.gesture.Repositories.OrderItemsRepository.OrderItemsReposi
 import com.bonappetit.gesture.Repositories.OrdersRepositories.OrdersRepositories;
 import com.bonappetit.gesture.Services.ordersServices.OrdersServices;
 
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -93,7 +95,6 @@ public class OrdersServicesImplementation implements OrdersServices {
         return bill;
     }
 
-
     public List<KitchenServiceDTO> getKitchenOrders(Integer tableId){
 
         List<Object[]> kitchenOrders = orderItemsRepository.getTableRequests(tableId);
@@ -107,7 +108,6 @@ public class OrdersServicesImplementation implements OrdersServices {
         for (Object[] order : kitchenOrders){
             Integer sId = (Integer)order[0];
             OrderItem item = (OrderItem)order[1];
-
             if(tempOrder.isEmpty() || tempId.equals(sId)){
                 tempOrder.add(item);
 
@@ -133,9 +133,12 @@ public class OrdersServicesImplementation implements OrdersServices {
 
 
     }
-
-
-
+    @Transactional
+    public boolean updateOrderStatus(KitchenOrderDTO kitchenOrderDTO){
+        System.out.println(kitchenOrderDTO);
+        orderItemsRepository.updateTableRequest(kitchenOrderDTO);
+        return  true;
+    }
 
 
 

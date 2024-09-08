@@ -17,14 +17,14 @@ public class ServiceOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
    @OneToMany(mappedBy = "serviceOrder", cascade = CascadeType.ALL)
      private List<OrderItem> cart = new ArrayList<>();
     private String status;
     @Column(name = "table_id")
-    private int tableId;
+    private Integer tableId;
     @Column(name = "user_id")
-    private int userId;
+    private Integer userId;
 
 
 

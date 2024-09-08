@@ -1,4 +1,4 @@
-package com.bonappetit.gesture.DTO.ServiceOrderDTO;
+package com.bonappetit.gesture.DTO.Kitchen;
 
 
 import com.bonappetit.gesture.Models.Order.OrderItem;

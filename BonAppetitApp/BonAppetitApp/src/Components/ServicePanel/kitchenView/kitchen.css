@@ -1,0 +1,6 @@
+
+
+@media(min-width:980px){
+    .kitchenOrder{display: flex; justify-content: space-around;}
+
+}

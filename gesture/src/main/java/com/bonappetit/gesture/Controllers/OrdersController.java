@@ -1,7 +1,8 @@
 package com.bonappetit.gesture.Controllers;
 
 
-import com.bonappetit.gesture.DTO.ServiceOrderDTO.KitchenServiceDTO;
+import com.bonappetit.gesture.DTO.Kitchen.KitchenOrderDTO;
+import com.bonappetit.gesture.DTO.Kitchen.KitchenServiceDTO;
 import com.bonappetit.gesture.DTO.ServiceOrderDTO.ServiceOrderDTO;
 import com.bonappetit.gesture.Models.Order.ServiceOrder;
 import com.bonappetit.gesture.Services.ordersServices.OrdersServices;
@@ -41,6 +42,16 @@ public class OrdersController {
     @ResponseBody
     public List<KitchenServiceDTO> KitchenOrders(@PathVariable Integer tableId){
         return ordersServices.getKitchenOrders(tableId);
+
+    }
+
+    @PostMapping("kitchen/updateOrders")
+    @ResponseBody
+    public  boolean kitchenUpdateOrder(@RequestBody KitchenOrderDTO OrderUpdate){
+        System.out.println(OrderUpdate);
+
+        ordersServices.updateOrderStatus(OrderUpdate);
+        return true;
 
     }
 
