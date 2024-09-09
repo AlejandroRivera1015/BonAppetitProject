@@ -1,6 +1,42 @@
+.kitchenOrderItem span {
+  width: 25%;
+}
+.kitchenOrderItem {
+  display: flex;
+  justify-content: space-around;
+}
 
+.kitchenOrdersContainer {
+  max-width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  border-radius: 10px;
+}
 
-@media(min-width:980px){
-    .kitchenOrder{display: flex; justify-content: space-around;}
+.optionChooser {
+  border-radius: 10px;
+  background: white;
+  height: 25px;
+}
 
+.orderStatus {
+  background: white;
+  transition: background 1s ease-in;
+}
+.itemPending {
+  background: orange !important;
+}
+
+@media (min-width: 980px) {
+  .kitchenOrdersContainer {
+    padding: 20px 30px;
+  }
+  .kitchenOrderItem {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .kitchenOrderItem span {
+    margin-bottom: 10px;
+  }
 }
