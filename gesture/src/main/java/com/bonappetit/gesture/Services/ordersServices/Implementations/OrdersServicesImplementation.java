@@ -89,9 +89,9 @@ public class OrdersServicesImplementation implements OrdersServices {
 
             System.out.println("el i es"+i);
 
-            if (!(requestStatus.equals("waiting") ))
+            if (requestStatus.equals("Completed"))
                 bill += itemAmount * itemPrice;
-        }
+            }
         return bill;
     }
 
@@ -102,8 +102,6 @@ public class OrdersServicesImplementation implements OrdersServices {
         List<KitchenServiceDTO> kitchenOrdersList = new ArrayList<>();
         List<OrderItem> tempOrder = new ArrayList<>();
         Integer tempId = 0;
-
-
 
         for (Object[] order : kitchenOrders){
             Integer sId = (Integer)order[0];
