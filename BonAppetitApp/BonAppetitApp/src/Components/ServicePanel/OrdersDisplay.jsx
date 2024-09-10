@@ -4,19 +4,27 @@ import { getTableOrders,getBill } from "./partials/ordersUtils";
 import { ListOrderItem } from "./ListOrderItem/ListOrderItem";
 import { BillDisplay } from "./BillDisplay";
 import { itemsContext } from "./ServicePanel";
+import { setOrderStatus } from "./partials/kitchenUtils";
 
 
 export const OrdersDisplay = () => {
-  let { tableId} = useContext(itemsContext);
   let [tableOrders, setTableOrders] = useState(null);
   let[pendingStatus,setPendingStatus] = useState("pendingStyle");
   let[orderLabel,setTableLabel] = useState("");
 
-  const labels = {intro: "TABLE ORDERS:"};
-  let [letterIndex,setLetterIndex] = useState(0);
 
 
-    let {bill,setBill} = useContext(itemsContext);
+    let {bill,setBill,tableId} = useContext(itemsContext);
+
+    function handleCompletedOrder (itemId, serviceOrderId,requestStatus){
+
+        console.log(itemId);
+        console.log(requestStatus);
+
+        return setOrderStatus(requestStatus,tableId,serviceOrderId,itemId);
+
+      
+    }
 
   
 
@@ -78,6 +86,20 @@ export const OrdersDisplay = () => {
                         }`}>{item.requestStatus}
                           </span>
                     </div>
+                    <div>
+                      {item.requestStatus !="Completed" ? 
+                                    <select onChange={(event)=>handleCompletedOrder(item.itemId,order.serviceOrderId,event.target.value)}>
+                                    <option value={"Completed"}>Completed</option>
+                                    <option value={"Cancel"}>Cancel</option>
+                                    <option value={"Modifying"}>Modifying</option>
+                                  </select>
+                      
+                      
+                      : null}
+          
+                    </div>
+
+                    
                   </li>
                 ))
                 }
