@@ -1,5 +1,9 @@
 .kitchenOrderItem span {
+  display: flex;
   width: 25%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .kitchenOrderItem {
   display: flex;
@@ -20,12 +24,34 @@
 }
 
 .orderStatus {
-  background: white;
-  transition: background 1s ease-in;
+  text-align: center;
+  border: solid 1px;
+  border-radius: 10px;
+  background-color: white;
+  transition: background 1s ease-in, color 1s ease-in, width 1s ease-in;
 }
 .itemPending {
-  background: orange !important;
+  background: orange ;
+
+  
 }
+
+.itemCanceled {
+  background: rgb(243, 41, 15) ;
+  color:white;
+}
+
+.itemServed {
+  background: rgb(6, 189, 67) ;
+  color:white;
+}
+
+.itemCooking {
+  background: rgb(199, 22, 161) !important;
+  color: white;
+}
+
+
 
 @media (min-width: 980px) {
   .kitchenOrdersContainer {

@@ -14,13 +14,13 @@ export const KitchenOrdersDisplay = () =>{
 
 
   useEffect(()=>{
-  
+
     const temp = setTimeout(() => {
       console.log("hola man");
     
     handleFlag();
 
-    }, 500);
+    }, 1400);
 
     return ()=>clearTimeout(temp);
   
@@ -58,11 +58,12 @@ export const KitchenOrdersDisplay = () =>{
                         <div   className="kitchenOrderItem" key={iIndex}>
                           <span>{item.itemName}</span>
                           <span>{item.amount}</span>
-                          <span className={`orderStatus ${statusVAR?item.requestStatus=="cooking"?"itemPending":"":""}`} >{item.requestStatus}</span>
+                          <span className={`orderStatus ${(item.requestStatus=="Canceled" || item.requestStatus=="Served") ?`item${item.requestStatus}`: (statusVAR?item.requestStatus=="waiting"?"itemPending":item.requestStatus=="cooking"?"itemCooking":"":"")}`} >{item.requestStatus}</span>
                           <select  
                             className="optionChooser"  onChange={(event)=>handlePetition(event,order.id,item.itemId)}>
-                            <option value={"cooking"}>Cooking</option>
-                            <option value={"canceled"}>Canceled</option>  
+                            <option value={"Cooking"}>Cooking</option>
+                            <option value={"Canceled"}>Canceled</option>  
+                            <option value={"Served"}>Served</option>  
                           </select>
                         </div>
                     ))}
