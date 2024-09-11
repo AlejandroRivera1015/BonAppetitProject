@@ -6,7 +6,6 @@ export const ServiceMenu = () =>{
     let {setMenuOpc} = useContext(itemsContext);
 
     let[activeMenu,setActiveMenu] = useState(false)
-    let tempA
 
 
     const handleMenuOpc = (opc) =>{
