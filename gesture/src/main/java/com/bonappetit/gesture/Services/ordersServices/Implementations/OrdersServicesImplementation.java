@@ -38,7 +38,7 @@ public class OrdersServicesImplementation implements OrdersServices {
                 System.out.println(item);
                  item.setServiceOrder(order);
             }
-            order.setStatus("waiting");
+            order.setStatus("Waiting");
             System.out.println("-//--------->OrderIs: " + order);
             orderRepository.save(order);
         }catch (Exception e){
@@ -86,8 +86,6 @@ public class OrdersServicesImplementation implements OrdersServices {
             Double itemPrice = (Double)i[1];
             Integer itemAmount = (Integer)i[2];
             String requestStatus = (String)i[3];
-
-            System.out.println("el i es"+i);
 
             if (requestStatus.equals("Completed"))
                 bill += itemAmount * itemPrice;

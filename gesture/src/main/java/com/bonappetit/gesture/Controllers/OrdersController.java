@@ -38,6 +38,9 @@ public class OrdersController {
         return ordersServices.getTableBill(tableId);
     }
 
+
+    //kitchenMethods
+
     @GetMapping("kitchen/getOrders/{tableId}")
     @ResponseBody
     public List<KitchenServiceDTO> KitchenOrders(@PathVariable Integer tableId){
