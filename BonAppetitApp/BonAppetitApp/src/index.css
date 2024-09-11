@@ -1,27 +1,58 @@
+.playwrite-cu {
+  font-family: "Playwrite CU", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
 }
 
 .container {
   width: 100%;
 }
 
+.selectTable,.serviceMenuPanel{justify-content: center; display: flex;}
+
 .footer {
+  position: absolute;
+  bottom: 0;
   display: flex;
   background: black;
   color: white;
   max-width: 100%;
-  padding: 20px 50px;
+  padding: 20px 0px;
+  width: 100%;
   justify-content: space-between;
   margin-top: 20px;
 }
+
+.footerContent{
+  max-width: 980px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+
+
+.footerLocationInfo{display: grid;}
+.footerActions{display: grid;}
+.footer a{ text-decoration: none; color: white;}
+.footerContact{display: block;}
+.footerSocialIcons{display: flex;}
 
 
 .footerBAR {
   display: flex;
   content: "";
-  height: 150px;
+  height: auto;
   width: 1px;
   background-color: white;
 }
@@ -31,10 +62,21 @@
   width: 100%;
 }
 
-@media (min-width: 980px) {
-  .footer {
-    display: flex;
-  }
 
-  .footerLocation{display: flex;}
+
+@media (min-width: 980px) {
+
+  h3{font-size: 32px; margin-bottom: 10px;}
+  .footer {display: flex;}
+
+  .footerContact,.footerLocation{width: 50%;}
+  .footerContact{margin-left: 80px;}
+
+
+  .footerLocation{display: flex; gap: 80px;}
+  .footerSocialIcons {gap: 10px;}
+  .footerContact img {width: 30px;}
+  .footerSocialIcons img{width: 30px;}
+
+
 }
