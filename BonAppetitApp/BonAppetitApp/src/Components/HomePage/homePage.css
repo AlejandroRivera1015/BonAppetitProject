@@ -42,8 +42,9 @@ form button {
     border: solid 1px white;
     color: rgb(255, 255, 255);
     border-radius: 10px;
-    height: 30px;
-    width: 200px;
+    height: 40px;
+    width: 150px;
+    margin-top: 10px;
 }
 
 
