@@ -16,18 +16,17 @@ export const KitchenOrdersDisplay = () =>{
   useEffect(()=>{
 
     const temp = setTimeout(() => {
-      console.log("hola man");
     
     handleFlag();
 
-    }, 1400);
+    }, 1000);
 
     return ()=>clearTimeout(temp);
   
   },[statusVAR])
 
 
-  const handleFlag =()=>(!statusVAR ?setStatusVAR(true) : setStatusVAR(false));
+  const handleFlag =()=>setStatusVAR((prev) => prev=="active"?"":"active");
 
 
 
@@ -55,16 +54,23 @@ export const KitchenOrdersDisplay = () =>{
                   <li className="kitchenOrder">
                     {order.orderItems.map((item,iIndex)=>(
                       
-                        <div   className="kitchenOrderItem" key={iIndex}>
+                        <div className="kitchenOrderItem" key={iIndex}>
                           <span>{item.itemName}</span>
                           <span>{item.amount}</span>
-                          <span className={`orderStatus ${(item.requestStatus=="Canceled" || item.requestStatus=="Served") ?`item${item.requestStatus}`: (statusVAR?item.requestStatus=="waiting"?"itemPending":item.requestStatus=="cooking"?"itemCooking":"":"")}`} >{item.requestStatus}</span>
-                          <select  
-                            className="optionChooser"  onChange={(event)=>handlePetition(event,order.id,item.itemId)}>
-                            <option value={"Cooking"}>Cooking</option>
-                            <option value={"Canceled"}>Canceled</option>  
-                            <option value={"Served"}>Served</option>  
-                          </select>
+                          <span className={`orderStatus ${item.requestStatus} ${(item.requestStatus!="Served" && item.requestStatus!="Canceled" && item.requestStatus!="Completed")?statusVAR:"" }`} >{item.requestStatus}</span>
+                          <span>                          {(item.requestStatus!="Served" && item.requestStatus!="Canceled" && item.requestStatus!="Completed")? 
+                              <select  className="optionChooser"  onChange={(event)=>handlePetition(event,order.id,item.itemId)}>
+                                <option value={"Cooking"}>Cooking</option>
+                                <option value={"Canceled"}>Canceled</option>  
+                                <option value={"Served"}>Served</option>  
+                              </select>
+  
+                          
+                          :null}
+                          </span>
+
+                
+
                         </div>
                     ))}
                   </li>

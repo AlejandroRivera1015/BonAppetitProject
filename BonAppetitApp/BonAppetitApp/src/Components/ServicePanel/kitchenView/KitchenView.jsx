@@ -18,8 +18,6 @@ export const KitchenView = () =>{
     let [kitchenOrders,setKitchenOrders] = useState(null);  
 
     useEffect(()=>{
-        console.log("xdxd");
-        
         async function ordersRequest (){
             let request = await getServiceOrders(tableId);
             setKitchenOrders(request);

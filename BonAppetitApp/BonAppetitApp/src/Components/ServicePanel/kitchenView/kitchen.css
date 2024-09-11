@@ -25,31 +25,51 @@
 
 .orderStatus {
   text-align: center;
-  border: solid 1px;
+  border: solid 1px black;
   border-radius: 10px;
   background-color: white;
   transition: background 1s ease-in, color 1s ease-in, width 1s ease-in;
 }
-.itemPending {
-  background: orange ;
 
-  
+
+.active{
+  background: white  !important;
+  color: black !important;
 }
 
-.itemCanceled {
-  background: rgb(243, 41, 15) ;
-  color:white;
+
+.Waiting {
+  background: rgb(240, 116, 0) ;
+  color: black
 }
 
-.itemServed {
-  background: rgb(6, 189, 67) ;
-  color:white;
+.Canceled {
+  background: rgb(247, 21, 4) ;
+  color: rgb(233, 233, 233) ;
 }
 
-.itemCooking {
-  background: rgb(199, 22, 161) !important;
-  color: white;
+.Cooking {
+  background: rgb(240, 204, 4) ;
+  color: rgb(0, 0, 0);
 }
+
+.Served {
+  background: rgb(24, 56, 236) ;
+  color: rgb(255, 255, 255);
+}
+
+
+.Completed {
+  background: rgb(28, 219, 2) ;
+  color: rgb(255, 255, 255);
+}
+
+.Modifying {
+  background: rgb(18, 245, 196) ;
+  color: rgb(0, 0, 0);
+}
+
+
 
 
 
