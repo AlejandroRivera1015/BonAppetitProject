@@ -20,7 +20,7 @@
 .selectTable,.serviceMenuPanel{justify-content: center; display: flex;}
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   display: flex;
   background: black;
