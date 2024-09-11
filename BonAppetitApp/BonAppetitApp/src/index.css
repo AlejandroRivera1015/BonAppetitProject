@@ -70,10 +70,11 @@
   .footer {display: flex;}
 
   .footerContact,.footerLocation{width: 50%;}
-  .footerContact{margin-left: 80px;}
+
+  .footerBAR{margin: 0 50px;}
 
 
-  .footerLocation{display: flex; gap: 80px;}
+  .footerLocation{display: flex; gap: 80px; justify-content: end;}
   .footerSocialIcons {gap: 10px;}
   .footerContact img {width: 30px;}
   .footerSocialIcons img{width: 30px;}
