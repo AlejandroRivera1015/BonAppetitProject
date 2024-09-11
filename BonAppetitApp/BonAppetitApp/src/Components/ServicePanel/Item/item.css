@@ -7,7 +7,7 @@
     transform: translate(0px, 0px);
     position: relative;
     opacity: 0;
-    transition: opacity 1s ease-in, background 0.5s ease-in, color 1s ease-in, border-radius 1s;
+    transition: opacity 1s ease-in, background 0.5s ease-in, color 1s ease-in, border-radius 1s ease-in;
     
 }
 
@@ -39,6 +39,10 @@
 .counterBtn {
     background: white;
     width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: black;
     border: solid 1px ;
     border-radius: 4px;
