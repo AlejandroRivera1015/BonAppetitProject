@@ -7,7 +7,7 @@
   background-color: transparent;
   border: 1px solid black; 
   border-radius: 5px 5px 0 0;
-  transition: background-color 0.5s ease-in, width 0.2s linear,border-radius 1s ease-in;
+  transition: background-color 0.5s ease-in, width 0.5s linear,border-radius 0.5s ease-in;
 }
 
 .menuActive {
