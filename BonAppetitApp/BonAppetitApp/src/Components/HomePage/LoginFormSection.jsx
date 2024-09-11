@@ -23,8 +23,8 @@ export const LoginFormSection = () => {
 
         <div className="formWrapper">
             <form onSubmit={(e) => handleLogIn(e)} className="logInForm">
-                <input className="userInput" onChange={(e) => setEmail(e.target.value)} type="text"></input>
-                <input className="userInput" onChange={(e) => setPassword(e.target.value)} type="password"></input>
+                <label>User<input className="userInput" onChange={(e) => setEmail(e.target.value)} type="text"></input></label>
+                <label>Password<input className="userInput" onChange={(e) => setPassword(e.target.value)} type="password"></input></label>
                 <button type="submit">LogIn</button>
             </form>
         </div>

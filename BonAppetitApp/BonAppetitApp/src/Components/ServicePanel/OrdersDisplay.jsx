@@ -21,7 +21,7 @@ export const OrdersDisplay = () => {
         console.log(itemId);
         console.log(requestStatus);
 
-        return setOrderStatus(requestStatus,tableId,serviceOrderId,itemId);
+        setOrderStatus(requestStatus,tableId,serviceOrderId,itemId);
 
       
     }
@@ -54,7 +54,7 @@ export const OrdersDisplay = () => {
   useEffect(()=>{
 
     const temporizer = setTimeout(()=>{
-      setPendingStatus(prev => prev =="pendingStyle" ? "":"pendingStyle")
+      setPendingStatus(prev => prev =="active" ? "" :"active")
     },1500)
 
     return ()=> clearTimeout(temporizer);
@@ -81,16 +81,15 @@ export const OrdersDisplay = () => {
                     <div>{item.amount}</div>
                     <div>${item.itemPrice}</div>
                     <div>
-                          <span className={`requestStatus ${
-                          item.requestStatus == "waiting" ? pendingStatus : null
-                        }`}>{item.requestStatus}
-                          </span>
+                          <span className={`requestStatus ${ (item.requestStatus != "Completed" && item.requestStatus != "Served" && item.requestStatus != "Canceled")?pendingStatus:null}  ${item.requestStatus}`} >{item.requestStatus}</span>
+
                     </div>
                     <div>
-                      {item.requestStatus !="Completed" ? 
+                      {(item.requestStatus !="Completed" && item.requestStatus !="Canceled")  ? 
                                     <select onChange={(event)=>handleCompletedOrder(item.itemId,order.serviceOrderId,event.target.value)}>
-                                    <option value={"Completed"}>Completed</option>
-                                    <option value={"Cancel"}>Cancel</option>
+                                    <option >Selecciona</option>
+                                    <option value={"Completed"}>Complete</option>
+                                    <option value={"Canceled"}>Cancel</option>
                                     <option value={"Modifying"}>Modifying</option>
                                   </select>
                       

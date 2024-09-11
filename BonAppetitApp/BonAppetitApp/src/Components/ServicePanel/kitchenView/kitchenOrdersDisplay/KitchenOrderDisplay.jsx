@@ -45,6 +45,7 @@ export const KitchenOrdersDisplay = () =>{
         <>
           <div className="kitchenOrdersContainer">
             <ul>
+              <h1>ORDERS:</h1>
             {
               kitchenOrders.map((order,oIndex)=>(
                 <span key={oIndex}>
@@ -60,12 +61,11 @@ export const KitchenOrdersDisplay = () =>{
                           <span className={`orderStatus ${item.requestStatus} ${(item.requestStatus!="Served" && item.requestStatus!="Canceled" && item.requestStatus!="Completed")?statusVAR:"" }`} >{item.requestStatus}</span>
                           <span>                          {(item.requestStatus!="Served" && item.requestStatus!="Canceled" && item.requestStatus!="Completed")? 
                               <select  className="optionChooser"  onChange={(event)=>handlePetition(event,order.id,item.itemId)}>
+                                <option >Selecciona</option>
                                 <option value={"Cooking"}>Cooking</option>
-                                <option value={"Canceled"}>Canceled</option>  
-                                <option value={"Served"}>Served</option>  
+                                <option value={"Canceled"}>Cancel</option>  
+                                <option value={"Served"}>Serve</option>  
                               </select>
-  
-                          
                           :null}
                           </span>
 
