@@ -1,5 +1,4 @@
 .itemContainer {
-    transition: background 1s, color ease-in-out, border-radius 1.4s;
     display: block;
     border: solid 1px transparent;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -8,16 +7,16 @@
     transform: translate(0px, 0px);
     position: relative;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in, background 0.5s ease-in, color 1s ease-in, border-radius 1s;
+    
 }
 
 .isVisibleItem{
     opacity:1 ;
 }
 
-.active {
-    transition: background ease-out 1s, border-radius 1.4s;
-    background-color: rgba(0, 0, 0, 0.9);
+.activeItem {
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     border-radius: 20px 20px 20px 20px;
 }

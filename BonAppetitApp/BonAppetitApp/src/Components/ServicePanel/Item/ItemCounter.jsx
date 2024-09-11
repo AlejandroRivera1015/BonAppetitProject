@@ -31,7 +31,7 @@ useEffect(()=>{
     tempOrderArray = tempOrderArray.filter(item => item.amount>0)
 
 
-    let requestStatus = "waiting";
+    let requestStatus = "Waiting";
 
     let isFind = false;
 

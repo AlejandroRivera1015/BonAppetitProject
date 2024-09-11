@@ -44,7 +44,7 @@ export const Item = ({ item,category,order ,index}) => {
 
     return (
         item?
-            <div className={`itemContainer ${(selection && counter>0 )? 'active' :''}  ${visibility?'isVisibleItem':""} `}  onClick={()=>{selection ? null :  setSelection(true) }}>
+            <div className={`itemContainer ${(selection && counter>0 )? 'activeItem' :''}  ${visibility?'isVisibleItem':""} `}  onClick={()=>{selection ? null :  setSelection(true) }}>
                 <img className="itemImage" src={item.image_url} /><br />
                 <span>{item.name}</span><br />
                 <span>${item.price}</span><br />
