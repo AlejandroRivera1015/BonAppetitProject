@@ -11,8 +11,30 @@ public class UsersServices {
     public UsersRepositories userRepository;
 
     public User loginService(String email, String pswd){
-       User userCredentials  = userRepository.findByEmailAndPswd(email,pswd);
-        return new User(userCredentials.getId(),userCredentials.getRole());
+
+        if(email.isEmpty() || pswd.isEmpty()){
+            System.out.println("campos f");
+        }
+        else {
+            User search = userRepository.findByEmailAndPswd(email,pswd);
+            if(search == null){
+                System.out.println("no salio");
+            }
+
+            else {
+                System.out.println("salio");
+                return new User(search.getId(),search.getRole());
+
+            }
+
+
+
+        }
+
+        return null;
+
+
+
     }
 
 
